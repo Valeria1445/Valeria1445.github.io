@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>задание 1</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<h2>список ссылок</h2>
+<ol id="links">
+  <li><a href="http://example.com">абсолютная гиперссылка на главную страницу сайта example.com</a></li>
+  <li><a href="https://example.com">абсолютная на главную сайта example.com в протоколе https</a></li>
+  <li><a href="ftp://example.com/myfile.zip">ссылка на файл на сервере FTP без авторизации</a></li>
+  <li><a href="ftp://user:password@example.com/myfile.zip">ссылка на файл на сервере FTP с авторизацией</a></li>
+  <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ#content">ссылка на фрагмент страницы некоторого сайта</a></li>
+  <li><a href="#links">ссылка на фрагмент текущей страницы</a></li>
+  	<ul>
+  		<li><a href="index.html" title="главная">главная</a></li>
+  		<li><a href="contacts.html" title="контакты">контакты</a></li>
+  		<li><a href="about.html" title="about">about</a></li>
+  	</ul>
+  </li>
+  <li><a>ссылка без href</a></li>
+  <li><a href="">ссылка с пустым href</a></li>
+  <li><!--<noindex>--><a href="https://example.com">запрещенная для индексации поисковиками</a><!--</noindex>--></li>
+  <li><p>контекстная в тексте <a href="http://htmlbook.ru/html/p">абзаца</a></p></li>
+  <li>
+    <a href="image.jpg" title="ссылка-изображение">
+      <img id="linkImg" src="image.jpg" alt="цветок" style="width:300px;height:150px"/>
+    </a>
+  </li>
+  <li>ссылки из прямоугольных и круглых областей картинки  (HTML-тег map)<br/>
+  	<img id="mapImg" src="map.jpg" alt="квадрта и круг" usemap="#linkArea" style="width:300px;height:150px" />
+  <map name="linkArea">
+  	<area shape="rect" coords="10,10,140,150" alt="квадрат" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82">
+  	<area shape="circle" coords="230,75,60" alt="круг" href="https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D0%B3">
+  </map>
+  </li>
+  <li><a href="2.html">относительная на страницу в текущем каталоге</a></li>
+  <li><a href="about/3.html">относительная на страницу в каталоге about</a></li>
+  <li><a href="../4.html">относительная на страницу в каталоге уровнем выше текущего</a></li>
+  <li><a href="../../5.html">относительная на страницу в каталоге двумя уровнями выше</a></li>
+  <li><a href="/index.html">сокращенная на главную</a></li>
+  <li><a href="/2.html">сокращенная ссылка на внутреннюю</a></li>
+</ol>
+<h2>форма</h2>
+<form>
+  <label>
+    имя <input name="field-name" placeholder="введите ваше имя"/>
+  </label>
+  <br/><br/>
+
+  <label>
+    Email <input name="field-email"
+      type="email" placeholder="введите вашу почту"/>
+  </label>
+  <br/><br/>
+
+  <label>
+    дата рождения <input name="field-date"
+      type="date" value="13.09.2022"/>
+  </label>
+  <br/><br/>
+
+  пол <br/>
+  <label><input type="radio"
+    name="radio-group-1"/>М
+  </label>
+  <label><input type="radio"
+    name="radio-group-1"/>Ж
+  </label>
+  <br/><br/>
+
+  количество конечностей <br/>
+  <label><input type="radio"
+    name="radio-group-2"/>0
+  </label>
+  <label><input type="radio"
+    name="radio-group-2"/>1
+  </label>
+  <label><input type="radio"
+    name="radio-group-2"/>2
+  </label>
+  <label><input type="radio"
+    name="radio-group-2"/>3
+  </label>
+  <label><input type="radio" checked="checked"
+    name="radio-group-2"/>4
+  </label>
+  <label><input type="radio"
+    name="radio-group-2"/>5
+  </label>
+  <br/><br/>
+
+  <label>
+    С контрактом ознакомлен(а)<input type="checkbox" name="check-1" />
+  </label>
+  <br/><br>
+  
+  <input type="submit" value="отправить"/>
+</form>
+
+</body>
+</html>
