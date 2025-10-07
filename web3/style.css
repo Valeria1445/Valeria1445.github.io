@@ -1,0 +1,256 @@
+/* === Mobile First (мобильные устройства) === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* === Header === */
+.header {
+  background-color: #d2757d;
+  color: white;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.header__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo__img {
+  height: 60px;
+  width: auto;
+}
+
+.header__title {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* === Navigation === */
+.nav {
+  background-color: #ffdcda;
+  width: 100%;
+  padding: 0.8rem 0;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+.nav__link {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* === Main === */
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  /* Порядок по умолчанию: ссылки → таблица → форма */
+}
+
+/* На мобильных: таблица ВЫШЕ ссылок */
+.hyperlinks { order: 2; }
+.table-section { order: 1; }
+.contacts { order: 3; }
+
+.section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+/* === Hyperlinks === */
+.hyperlinks .container {
+  background-color: #ffdcda;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.hyperlinks__list {
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.hyperlinks img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === Table === */
+.table-section .container {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #333;
+  padding: 8px;
+  text-align: center;
+}
+
+.data-table thead th {
+  background-color: #ad0d4a;
+  color: white;
+}
+
+.data-table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #e0e0e0;
+}
+
+/* === Form === */
+.contacts .container {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form__group span {
+  font-weight: bold;
+}
+
+.btn {
+  padding: 10px;
+  background-color: #ad0d4a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* === Footer === */
+.footer {
+  background-color: #333;
+  color: white;
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer__text {
+  margin: 0;
+}
+
+/* === Media Queries: планшеты и десктопы (768px и выше) === */
+@media (min-width: 768px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .header__inner {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .header__title {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .logo__img {
+    height: 70px;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .nav__link {
+    color: white;
+  }
+
+  /* Восстанавливаем исходный порядок: ссылки → таблица */
+  .hyperlinks { order: 1; }
+  .table-section { order: 2; }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .hyperlinks .container {
+    padding: 1.5rem;
+  }
+
+  .data-table {
+    font-size: 1rem;
+  }
+
+  .form__group {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .form input,
+  .form select,
+  .form textarea {
+    width: auto;
+    max-width: 300px;
+  }
+
+  .btn {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+  }
+}
