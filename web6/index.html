@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор стоимости услуги</title>
+    <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f9f9f9;
+          color: #333;
+          line-height: 1.6;
+          padding: 20px;
+        }
+        .container {
+          max-width: 600px;
+          margin: 0 auto;
+          background: white;
+          padding: 25px;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+          text-align: center;
+          margin-bottom: 24px;
+          color: #ad0d4a;
+        }
+        .form-group {
+          margin-bottom: 20px;
+        }
+        label {
+          display: block;
+          margin-bottom: 8px;
+          font-weight: bold;
+          color: #2c3e50;
+        }
+        input[type="number"] {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 16px;
+        }
+        select, .options, .properties {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 16px;
+          margin-top: 8px;
+        }
+        .options,
+        .properties {
+          padding: 12px;
+          background-color: #ffdcda;
+          border: none;
+          border-radius: 6px;
+        }
+        .options label,
+        .properties label {
+          display: block;
+          margin: 8px 0;
+          font-weight: normal;
+        }
+        .options input[type="radio"],
+        .properties input[type="checkbox"] {
+          margin-right: 8px;
+        }
+        #price {
+          text-align: center;
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: #ad0d4a;
+          margin-top: 20px;
+          padding: 12px;
+          background-color: #ffdcda;
+          border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Калькулятор стоимости услуги</h1>
+
+    <div class="form-group">
+        <label for="quantity">Количество:</label>
+        <input type="number" id="quantity" min="1" value="1" />
+    </div>
+
+    <div class="form-group">
+        <label for="type">Тип услуги:</label>
+        <select id="type">
+            <option value="1">Услуга 1 — базовая (100 ₽)</option>
+            <option value="2">Услуга 2 — с опциями (200 ₽)</option>
+            <option value="3">Услуга 3 — со свойствами (300 ₽)</option>
+        </select>
+    </div>
+
+    <!-- Опции (для типа 2) -->
+    <div class="form-group options" id="options" style="display: none;">
+        <label>Выберите опцию:</label>
+        <label><input type="radio" name="option" value="option1" checked /> Опция 1 (+10 ₽)</label>
+        <label><input type="radio" name="option" value="option2" /> Опция 2 (+14 ₽)</label>
+        <label><input type="radio" name="option" value="option3" /> Опция 3 (+88 ₽)</label>
+    </div>
+
+    <!-- Свойства (для типа 3) -->
+    <div class="form-group properties" id="properties" style="display: none;">
+        <label>Дополнительные свойства:</label>
+        <label><input type="checkbox" name="property" value="prop1" /> Свойство 1 (+133 ₽)</label>
+        <label><input type="checkbox" name="property" value="prop2" /> Свойство 2 (+7 ₽)</label>
+    </div>
+
+    <div id="price">Стоимость: 100 ₽</div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
