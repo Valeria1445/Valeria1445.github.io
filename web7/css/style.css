@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.carousel {
+  padding: 50px 0;
+}
+
+.carousel__inner {
+  margin-bottom: 30px;
+}
+
+.carousel__item {
+  padding: 10px;
+}
+
+.carousel__item-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Стили для стрелок Slick */
+.slick-prev,
+.slick-next {
+  width: 40px;
+  height: 40px;
+  background: #333;
+  border-radius: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background: #555;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.slick-prev:before {
+  content: "‹"; /* Используем символ вместо текста */
+}
+
+.slick-next:before {
+  content: "›"; /* Используем символ вместо текста */
+}
+
+/* Альтернативный вариант с иконками через background-image */
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  opacity: 1;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+  left: -50px;
+}
+
+.slick-next {
+  right: -50px;
+}
+
+/* Кастомный пейджер */
+.custom-pager {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+.pager-separator {
+  margin: 0 5px;
+}
+
+.current-page {
+  color: #007bff;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .slick-prev {
+    left: 10px;
+  }
+  
+  .slick-next {
+    right: 10px;
+  }
+  
+  .carousel__item-img {
+    height: 150px;
+  }
+  
+  .slick-prev,
+  .slick-next {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .carousel__item-img {
+    height: 120px;
+  }
+  
+  .slick-prev,
+  .slick-next {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 14px;
+  }
+}
